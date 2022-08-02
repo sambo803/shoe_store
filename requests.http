@@ -1,1 +1,24 @@
+# GET index 
 GET http://localhost:3000/shoes.json
+
+###
+# POST create
+POST http://localhost:3000/shoes.json
+Content-Type: application/json
+
+{
+  "brand": "Chuck Taylors",
+  "color": "color",
+  "model": "style",
+  "style": "hi-tops" 
+}
+
+###
+# GET show
+GET http://localhost:3000/shoes/7
+
+###
+# PATCH update
+PATCH http://localhost:3000/shoes/6.json
+
+###

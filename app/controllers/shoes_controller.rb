@@ -9,15 +9,24 @@ class ShoesController < ApplicationController
       brand: params[:brand],
       color: params[:color],
       model: params[:model],
-      style: params[:style]
+      style: params[:style],
     )
     shoe.save
     render json: shoe.as_json
   end
 
   def show
-    shoe = Shoe.create
+    shoe = Shoe.find_by(id: params[:id])
+    render shoe.as_json
+  end
 
-  # end
-
+  def update
+    shoe = Shoe.find_by(id: params[:id])
+    shoe.color = "blue"
+    shoe.brand = "kswiss"
+    shoe.style = "tennis"
+    shoe.model = "flyer"
+    shoe.save
+    render json: shoe.as_json
+  end
 end
