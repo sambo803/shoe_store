@@ -22,3 +22,4 @@ GET http://localhost:3000/shoes/7
 PATCH http://localhost:3000/shoes/6.json
 
 ###
+DELETE http://localhost:3000/shoes/8.json

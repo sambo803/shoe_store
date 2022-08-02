@@ -22,11 +22,17 @@ class ShoesController < ApplicationController
 
   def update
     shoe = Shoe.find_by(id: params[:id])
-    shoe.color = "blue"
-    shoe.brand = "kswiss"
-    shoe.style = "tennis"
-    shoe.model = "flyer"
+    shoe.color = params[:color]
+    shoe.brand = params[:brand]
+    shoe.style = params[:style]
+    shoe.model = params[:model]
     shoe.save
     render json: shoe.as_json
+  end
+
+  def destroy
+    shoe = Shoe.find_by(id: params[:id])
+    shoe.destroy
+    render json: { message: "shoe is Destroyed!" }
   end
 end
